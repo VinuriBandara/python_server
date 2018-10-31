@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<html>
+<head>
+<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAACMuAAAjLgAAAAAAAAAAAABWd+v/VHXr/1p66//r7/3///////7+/////////////////////////f3////////T2/r/TnDq/1d36/9Vduv/Vnbr/1R16/9Zeuv/6+/9///////+/v////////////////////////3+////////3uT7/1J06/9Vduv/VXbr/1Z26/9Udev/V3jr/+js/P///////v7////////////////////////+/v///////+Xq/P9Vduv/VXbr/1Z26/9Wduv/VXbr/1R16//h5vv///////3+/////////v7///3+/////////v7////////j6fz/VXbr/1V26/9Vduv/VXbr/1Z36/9Pcer/1Nz6///////9/f////////////////////////39////////2eD6/1By6v9Wd+v/VXbr/1V26/9XeOv/SW3q/7fF9v///////P3////////d5Pv/1N36//39///9/f///////7/L9/9Kber/V3jr/1V26/9Vduv/V3jr/0xv6v+AmPD///////X3/v/w8/3/0dr5/8jS+P/n7Pz/8fT9//////+FnfD/TG7q/1d46/9Vduv/VXbr/1V26/9Wd+v/TW/q/73K9//z9v7/7vH9/9Pc+v/g5vv/8fT9/+3w/f+/y/f/TnDq/1Z36/9Vduv/VXbr/1V26/9Vduv/VXbr/1V26/9Mb+r/1N36///////w8v3/9Pb+//////+RpvL/TG/q/1V26/9Vduv/VXbr/1V26/9Vduv/VXbr/1V26/9Vduv/V3fr/+Hn+///////ucb3/7/M9///////epTv/0xv6v9YeOv/VXbr/1V26/9Vduv/VXbr/1V26/9Xd+v/TXDq/3mT7////////////6299f+Xq/P//////7LB9v9Jber/WHjr/1V26/9Vduv/VXbr/1V26/9Vduv/WHjr/0ls6v+gsvT///////////+brvP/boru///////Z4Pr/UnPr/1V26/9Vduv/VXbr/1V26/9Vduv/VXbr/1h46/9JbOr/o7X0////////////d5Lv/2B+7P//////7vH9/1p67P9Tdev/Vnbr/1V26/9Vduv/VXbr/1V26/9Wd+v/UXPr/2SC7f/U3Pr/scD2/1Jz6/9Rcur/iJ/x/5Wq8v9SdOv/VXbr/1V26/9Vduv/VXbr/1V26/9Vduv/VXbr/1Z36/9Sc+v/TW/q/01w6v9Udev/Vnfr/0xv6v9Lbur/VXbr/1V26/9Vduv/VXbr/1V26/9Vduv/VXbr/1V26/9Vduv/Vnfr/1d46/9XeOv/Vnbr/1V26/9XeOv/WHjr/1V26/9Vduv/VXbr/1V26/9Vduv/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">
+</head>
+
+<title>Index</title>
+<style>
+
+
+body{
+    margin-top:20px;
+    background:#eee;
+}
+
+
+/*** Portfolio page
+==============================================================================*/
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-header {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-image: url('http://www.bootdey.com/img/Content/flores-amarillas-wallpaper.jpeg');
+    background-size: cover;
+    background-position: center center;
+    padding: 30px 15px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.card-header-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 4em;
+    width: 4em;
+}
+
+.card-header-menu:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    border-left: 2em solid transparent;
+    border-bottom: 2em solid transparent;
+    border-right: 2em solid #37a000;
+    border-top: 2em solid #37a000;
+    border-top-right-radius: 4px;
+}
+
+.card-header-menu i {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    color: #fff;
+    z-index: 1;
+}
+
+.card-header-headshot {
+    height: 6em;
+    width: 6em;
+    border-radius: 50%;
+    border: 2px solid #37a000;
+    background-image: url('http://bootdey.com/img/Content/avatar/avatar6.png');
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 1px 3px 3px #3E4142;
+}
+
+.card-content-member {
+    position: relative;
+    background-color: #fff;
+    padding: 1em;
+    box-shadow: 0 2px 2px rgba(62, 65, 66, 0.15);
+}
+
+.card-content-member {
+    text-align: center;
+}
+
+.card-content-member p i {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.card-content-languages {
+    background-color: #fff;
+    padding: 15px;
+}
+
+.card-content-languages .card-content-languages-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-bottom: 0.5em;
+}
+
+.card-content-languages .card-content-languages-group:last-of-type {
+    padding-bottom: 0;
+}
+
+.card-content-languages .card-content-languages-group > div:first-of-type {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 5em;
+    flex: 0 0 5em;
+}
+
+.card-content-languages h4 {
+    line-height: 1.5em;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.card-content-languages li {
+    display: inline-block;
+    padding-right: 0.5em;
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+.card-content-summary {
+    background-color: #fff;
+    padding: 15px;
+}
+
+.card-content-summary p {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.card-footer-stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #2c3136;
+}
+
+.card-footer-stats div {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 33%;
+    flex: 1 0 33%;
+    padding: 0.75em;
+}
+
+.card-footer-stats div:nth-of-type(2) {
+    border-left: 1px solid #3E4142;
+    border-right: 1px solid #3E4142;
+}
+
+.card-footer-stats p {
+    font-size: 0.8em;
+    color: #A6A6A6;
+    margin-bottom: 0.4em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.card-footer-stats i {
+    color: #ddd;
+}
+
+.card-footer-stats span {
+    color: #ddd;
+}
+
+.card-footer-stats span.stats-small {
+    font-size: 0.9em;
+}
+
+.card-footer-message {
+    background-color: #37a000;
+    padding: 15px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.card-footer-message h4 {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+}
+
+.review-number {
+    float: left;
+    width: 35px;
+    line-height: 1;
+}
+
+.review-number div {
+    height: 9px;
+    margin: 5px 0
+}
+
+.review-progress {
+    float: left;
+    width: 230px;
+}
+
+.review-progress .progress {
+    margin: 8px 0;
+}
+
+.progress-number {
+    margin-left: 10px;
+    float: left;
+}
+
+.rating-block,
+.review-block {
+    background-color: #fff;
+    border: 1px solid #e1e6ef;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.review-block {
+    margin-bottom: 20px;
+}
+
+.review-block-img img {
+    height: 60px;
+    width: 60px;
+}
+
+.review-block-name {
+    font-size: 12px;
+    margin: 10px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.review-block-name a {
+    color: #374767;
+}
+
+.review-block-date {
+    font-size: 12px;
+}
+
+.review-block-rate {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.review-block-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.review-block-description {
+    font-size: 13px;
+}
+
+
+
+/* Widgets page
+==============================================================================*/
+
+
+/*-- Monthly calender --*/
+
+.monthly_calender {
+    width: 100%;
+    max-width: 600px;
+    display: inline-block;
+}
+
+
+/*-- Profile widget --*/
+
+.profile-widget .panel-heading {
+    min-height: 200px;
+    background: #fff url(../img/profile-1024x640.jpg) no-repeat top center;
+    background-size: cover;
+}
+
+.profile-widget .media-heading {
+    color: #5B5147;
+}
+
+.profile-widget .panel-body {
+    padding: 25px 15px;
+}
+
+.profile-widget .panel-body .img-circle {
+    height: 90px;
+    width: 90px;
+    padding: 8px;
+    border: 1px solid #e2dfdc;
+}
+
+.profile-widget .panel-footer {
+    padding: 0px;
+    border: none;
+}
+
+.profile-widget .panel-footer .btn-group .btn {
+    border: none;
+    font-size: 1.2em;
+    background-color: #F6F1ED;
+    color: #BAACA3;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 15px 0;
+}
+
+.profile-widget .panel-footer .btn-group .btn:hover {
+    color: #F6F1ED;
+    background-color: #8F7F70;
+}
+
+.profile-widget .panel-footer .btn-group>.btn:not(:first-child) {
+    border-left: 1px solid #fff;
+}
+
+.profile-widget .panel-footer .btn-group .highlight {
+    color: #E56E4C;
+}
+                                    
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+<section class="col-md-12">
+<div class="row">
+    <div class="col-sm-12 col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-menu">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="card-header-headshot"></div>
+            </div>
+            <div class="card-content">
+                <div class="card-content-member">
+                    <h4 class="m-t-0">Naeem Khan</h4>
+                    <p class="m-0"><i class="pe-7s-map-marker"></i>Bangladesh</p>
+                </div>
+                <div class="card-content-languages">
+                    <div class="card-content-languages-group">
+                        <div>
+                            <h4>Speaks:</h4>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>English
+                                    <div class="fluency fluency-4"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-content-languages-group">
+                        <div>
+                            <h4>Learning:</h4>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>Spanish,</li>
+                                <li>Russian,</li>
+                                <li>German</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content-summary">
+                    <p>Specialties are Creative UI, HTML5, CSS3, Semantic Web, Responsive Layouts, Web Standards Compliance, Performance Optimization, Cross Device Troubleshooting.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="card-footer-stats">
+                    <div>
+                        <p>PROJECTS:</p><i class="fa fa-users"></i><span>241</span>
+                    </div>
+                    <div>
+                        <p>MESSAGES:</p><i class="fa fa-coffee"></i><span>350</span>
+                    </div>
+                    <div>
+                        <p>Last online</p><span class="stats-small">3 days ago</span>
+                    </div>
+                </div>
+                <div class="card-footer-message">
+                    <h4><i class="fa fa-comments"></i> Message me</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-8">
+        <div class="review-block">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="review-block-img">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-rounded" alt="">
+                    </div>
+                    <div class="review-block-name"><a href="#">nktailor</a></div>
+                    <div class="review-block-date">January 29, 2016<br>1 day ago</div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="review-block-rate">
+                        <button type="button" class="btn btn-success btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-success btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-success btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="review-block-title">this was nice in buy</div>
+                    <div class="review-block-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type. </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="review-block-img">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-rounded" alt="">
+                    </div>
+                    <div class="review-block-name"><a href="#">nktailor</a></div>
+                    <div class="review-block-date">January 29, 2016<br>1 day ago</div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="review-block-rate">
+                        <button type="button" class="btn btn-success btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-success btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-success btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="review-block-title">this was nice in buy</div>
+                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="review-block-img">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-rounded" alt="">
+                    </div>
+                    <div class="review-block-name"><a href="#">nktailor</a></div>
+                    <div class="review-block-date">January 29, 2016<br>1 day ago</div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="review-block-rate">
+                        <button type="button" class="btn btn-success btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-success btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-success btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="review-block-title">this was nice in buy</div>
+                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+</section>
+
+</body>
+</html>
