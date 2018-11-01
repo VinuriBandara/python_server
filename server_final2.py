@@ -20,6 +20,7 @@ def view_request(first_header,now,content):
 		connectionSocket.sendall(content)
 	except socket.error as e:
 		print ("Error sending data :%s" %e)
+		sys.exit(1)
 		
 
 
@@ -69,6 +70,7 @@ class ClientThread(threading.Thread):
 
 			except socket.error as e:
 				print ("Error in receiving data:%s" %e)
+				sys.exit(1)
 				
 
 	
@@ -80,6 +82,7 @@ if __name__ == '__main__':
 		serverSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,1)	
 	except socket.error as e:
 		print ("Error creating socket:%s" %e)
+		sys.exit(1)
 		
 
 
@@ -88,6 +91,7 @@ if __name__ == '__main__':
 		serverSocket.bind(('',serverPort))
 	except socket.gaierror as e:
 		print ("Address-related error connecting to server: %" %e)
+		sys.exit(1)
 		
 
 	serverSocket.listen(5)
