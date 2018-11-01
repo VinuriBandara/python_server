@@ -14,7 +14,7 @@ def handle_request(request):
         header = 'HTTP/1.0 200 OK\n\n'
 
 
-        fin = open('htdocs/page' + filename)
+        fin = open('page' + filename)
         content = fin.read()
         fin.close()
 
@@ -33,7 +33,7 @@ def handle_request(request):
 
     except FileNotFoundError:
         header = 'HTTP/1.0 404 Not Found\n\n'
-        file_error= open('htdocs/page/file_error.html')
+        file_error= open('page/file_error.html')
         content = file_error.read()
         file_error.close()
 

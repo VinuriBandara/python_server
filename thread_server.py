@@ -1,7 +1,7 @@
 import socket 
 import threading
 import sys
-        
+import datetime        
 
 class ClientThread(threading.Thread):
 	def __init__(self,connect,address):
@@ -13,6 +13,7 @@ class ClientThread(threading.Thread):
 	def run(self):
 		while True:
 			request = connectionSocket.recv(1024).decode()
+			
 			print(request)
 			headers = request.split('\n')
 			filename = headers[0].split()[1]
@@ -22,39 +23,42 @@ class ClientThread(threading.Thread):
 				filename = '/sucks.html'
 
 			path = 'page'
+			file = open(path + filename, 'rb')
+			content = file.read()
 
 			try:
 
-				file = open(path + filename , 'rb')
+				file = open(path + filename, 'rb')
 				content = file.read()
 				file.close()
 
-				header = 'HTTP/1.0 200 OK\n\n'
+				header = "HTTP/1.0 200 OK\n\n"
 
-				if (filename.endswith(".jpg")):
-					mimetype ='image/jpg'
-				elif(filename.endswith(".css")):
-					mimetype = 'text/css'
-				else:
-					mimetype = 'text/html'
 
-				print('Content-Type: '+ str(mimetype) )
+				#response = header.encode() + content
+
+
+				header_info = {
+					"Content-Length": len(content),
+					"Keep-Alive": "timeout=%d,max=%d" %(10,100),
+					"Connection": "Keep-Alive"
+				}
+				
+				following_header = "\r\n".join("%s:%s" % (item, header_info[item]) for item in header_info)
+				print (following_header)
+				connectionSocket.sendall((header+ '\r\n'+following_header+ '\r\n\r\n').encode())
+				connectionSocket.sendall(content)
+			
+
 				
 			except FileNotFoundError:
 				header = 'HTTP/1.0 404 Not Found\n\n'
-				file_error= open('htdocs/page/file_error.html','rb')
+				file_error= open(path +'file_error.html', 'rb')
 				content = file_error.read()
 				file_error.close()
-
-				
-
-			response = header.encode()
-			response += content
-
-			connectionSocket.sendall(response)
-			connectionSocket.close()
-		
-
+				response = header.content() + content
+				connectionSocket.sendall(response)
+			
 
 
 if __name__ == '__main__':
