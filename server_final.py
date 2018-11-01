@@ -3,6 +3,25 @@ import datetime
 import threading
 
 
+
+def view_request(first_header,now,content):
+	
+	header_info = {
+			"Date": now.strftime("%Y-%m-%d %H:%M"),
+			"Content-Length": len(content),
+			"Keep-Alive": "timeout=%d,max=%d" %(10,100),
+			"Connection": "Keep-Alive"
+					
+	}
+	following_header = "\r\n".join("%s:%s" % (item, header_info[item]) for item in header_info)
+	print ("following_header:", following_header)
+	connectionSocket.sendall((first_header +'\r\n'+following_header + '\r\n\r\n').encode())
+	connectionSocket.sendall(content)
+
+
+
+
+
 class ClientThread(threading.Thread):
 	def __init__(self, connect, address):
 		threading.Thread.__init__(self)
@@ -22,20 +41,23 @@ class ClientThread(threading.Thread):
 					filename = 'sucks.html'
 
 				file = open('page/'+ filename, 'rb')
-				outputdata = file.read()
+				content = file.read()
+				file.close()
 				now = datetime.datetime.now()
 				first_header = "HTTP/1.1 200 OK"
-				header_info = {
-					"Date": now.strftime("%Y-%m-%d %H:%M"),
-					"Content-Length": len(outputdata),
-					"Keep-Alive": "timeout=%d,max=%d" %(10,100),
-					"Connection": "Keep-Alive"
+
+				view_request (first_header,now,content)
+				# header_info = {
+				# 	"Date": now.strftime("%Y-%m-%d %H:%M"),
+				# 	"Content-Length": len(content),
+				# 	"Keep-Alive": "timeout=%d,max=%d" %(10,100),
+				# 	"Connection": "Keep-Alive"
 					
-				}
-				following_header = "\r\n".join("%s:%s" % (item, header_info[item]) for item in header_info)
-				print ("following_header:", following_header)
-				connectionSocket.sendall((first_header +'\r\n'+following_header + '\r\n\r\n').encode())
-				connectionSocket.sendall(outputdata)
+				# }
+				# following_header = "\r\n".join("%s:%s" % (item, header_info[item]) for item in header_info)
+				# print ("following_header:", following_header)
+				# connectionSocket.sendall((first_header +'\r\n'+following_header + '\r\n\r\n').encode())
+				# connectionSocket.sendall(content)
 
 
 
@@ -44,18 +66,22 @@ class ClientThread(threading.Thread):
 				first_header = 'HTTP/1.0 404 Not Found'
 				file_error= open('page/file_error.html','rb')
 				content = file_error.read()
+				now = datetime.datetime.now()
 				file_error.close()
-				header_info = {
-					"Date": now.strftime("%Y-%m-%d %H:%M"),
-					"Content-Length": len(content),
-					"Keep-Alive": "timeout=%d,max=%d" %(10,100),
-					"Connection": "Keep-Alive"
+
+
+				view_request (first_header,now,content)
+				# header_info = {
+				# 	"Date": now.strftime("%Y-%m-%d %H:%M"),
+				# 	"Content-Length": len(content),
+				# 	"Keep-Alive": "timeout=%d,max=%d" %(10,100),
+				# 	"Connection": "Keep-Alive"
 					
-				}
-				following_header = "\r\n".join("%s:%s" % (item, header_info[item]) for item in header_info)
-				print ("following_header:", following_header)
-				connectionSocket.sendall((first_header +'\r\n'+following_header + '\r\n\r\n').encode())
-				connectionSocket.sendall(content)
+				# }
+				# following_header = "\r\n".join("%s:%s" % (item, header_info[item]) for item in header_info)
+				# print ("following_header:", following_header)
+				# connectionSocket.sendall((first_header +'\r\n'+following_header + '\r\n\r\n').encode())
+				# connectionSocket.sendall(content)
 				
 				
 
