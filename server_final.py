@@ -47,17 +47,6 @@ class ClientThread(threading.Thread):
 				first_header = "HTTP/1.1 200 OK"
 
 				view_request (first_header,now,content)
-				# header_info = {
-				# 	"Date": now.strftime("%Y-%m-%d %H:%M"),
-				# 	"Content-Length": len(content),
-				# 	"Keep-Alive": "timeout=%d,max=%d" %(10,100),
-				# 	"Connection": "Keep-Alive"
-					
-				# }
-				# following_header = "\r\n".join("%s:%s" % (item, header_info[item]) for item in header_info)
-				# print ("following_header:", following_header)
-				# connectionSocket.sendall((first_header +'\r\n'+following_header + '\r\n\r\n').encode())
-				# connectionSocket.sendall(content)
 
 
 
@@ -71,17 +60,7 @@ class ClientThread(threading.Thread):
 
 
 				view_request (first_header,now,content)
-				# header_info = {
-				# 	"Date": now.strftime("%Y-%m-%d %H:%M"),
-				# 	"Content-Length": len(content),
-				# 	"Keep-Alive": "timeout=%d,max=%d" %(10,100),
-				# 	"Connection": "Keep-Alive"
-					
-				# }
-				# following_header = "\r\n".join("%s:%s" % (item, header_info[item]) for item in header_info)
-				# print ("following_header:", following_header)
-				# connectionSocket.sendall((first_header +'\r\n'+following_header + '\r\n\r\n').encode())
-				# connectionSocket.sendall(content)
+	
 				
 				
 
